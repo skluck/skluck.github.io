@@ -12,7 +12,7 @@
             .header-text sub { color: #454552; font-size: 50%; display: block; }
 
             #app { padding-bottom: 2em; margin: 1em; }
-
+            #linkback { position: absolute; top: .75em; right: .5em; font-size: 1em; }
             #editor,
             #preview {
                 height: 500px;
@@ -29,13 +29,11 @@
     </head>
 
     <body>
+        <sub id="linkback"><a href="http://coligo.io/markdown-editor-vuejs/">coligo.io</a></sub>
         <div id="app">
             <div class="row">
                 <div class="col-xs-12 header-text">
-                    <h1>
-                        GitHub Markdown Preview
-                        <sub><a href="http://coligo.io/markdown-editor-vuejs/">coligo.io</a></sub>
-                    </h1>
+                    <h1>GitHub Markdown Preview</h1>
                 </div>
             </div>
 
@@ -57,6 +55,13 @@
 
                     <h4>Customize GitHub API</h4>
                     <input id="gh-base" class="form-control" type="text" placeholder="https://api.github.com">
+
+                    <h4>Markdown Guides</h4>
+                    <ul>
+                        <li><a href="https://help.github.com/articles/basic-writing-and-formatting-syntax/">GitHub: Basic writing and formatting syntax</a></li>
+                        <li><a href="https://help.github.com/articles/working-with-advanced-formatting/">GitHub: Working with advanced formatting</a></li>
+                        <li><a href="http://www.emoji-cheat-sheet.com/">GitHub Emoji Cheatsheet</a></li>
+                    </ul>
                 </div>
 
             </div>
