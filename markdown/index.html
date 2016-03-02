@@ -2,7 +2,7 @@
 <html>
 
     <head>
-        <title>GitHub Markdown Preview with VueJs - coligo</title>
+        <title>GitHub Markdown Preview</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <link rel="stylesheet" href="github-markdown.css">
 
@@ -13,12 +13,12 @@
             .header-text sub { color: #454552; font-size: 50%; display: block; }
 
             #app { padding-bottom: 2em; margin: 1em; }
+
             #editor,
             #preview {
                 height: 500px;
                 max-height: 500px;
                 margin-bottom: 2em;
-                margin-top: 2em;
             }
 
             .panel {
@@ -39,11 +39,14 @@
                     </h1>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-xs-12 col-md-6">
+                    <h4>Editor</h4>
                     <textarea id="editor" class="form-control" v-model="rawMarkdown"></textarea>
                 </div>
                 <div id="preview" class="col-xs-12 col-md-6">
+                    <h4>Preview</h4>
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <article class="markdown-body">
@@ -52,11 +55,15 @@
                             </article>
                         </div>
                     </div>
+
+                    <h4>Customize GitHub API</h4>
+                    <input id="gh-base" class="form-control" type="text" placeholder="https://api.github.com">
                 </div>
+
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <button type="button" class="btn btn-primary pull-right" @click="renderPreview">Preview</button>
+                    <button type="button" class="btn btn-primary" @click="renderPreview">Preview</button>
                 </div>
             </div>
         </div>
@@ -75,9 +82,19 @@
                 },
                 methods: {
                     renderPreview: function() {
+                        $('#ghmd-error').remove();
+
+                        var ghAPI = $.trim($('#gh-base').val()) || 'https://api.github.com';
+                        if (ghAPI.substr(-1) != '/') ghAPI += '/';
+
+                        if (!/^(http|https):\/\//.test(ghAPI)) {
+                            $('#app').prepend('<div class="alert alert-danger" id="ghmd-error"><b>Error!</b> Invalid URL specified.</div>');
+                            return;
+                        }
+
                         // POST request to GitHub API
                         this.$http({
-                            url: 'https://api.github.com/markdown',
+                            url: ghAPI + 'markdown',
                             method: 'POST',
                             data: {text: this.rawMarkdown, mode: 'gfm'}
                         }).then(function (response) {
@@ -85,7 +102,8 @@
                             this.renderedMarkdown = response.data;
                         }, function (response) {
                             // error callback
-                            console.log(response.data);
+                            $('#app').prepend('<div class="alert alert-danger" id="ghmd-error"><b>Error!</b> Check the console for errors.</div>');
+                            console.log(response);
                         });
                     }
                 }
