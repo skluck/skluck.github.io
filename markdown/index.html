@@ -9,7 +9,6 @@
             body { background-color: #f4f7f7; }
 
             .header-text h1 { color: #e85a71; }
-            .header-text sub { color: #454552; font-size: 50%; display: block; }
 
             #app { padding-bottom: 2em; margin: 2em 1em; }
             #linkback { position: absolute; top: .75em; right: .5em; font-size: 1em; }
@@ -22,14 +21,17 @@
             }
 
             #editor { height: 35em; font-family: monospace; }
-            #preview { min-height: 5em; }
             #preview-button { margin: 1em 0; }
+
+            #preview { min-height: 5em; }
+            #preview .panel-body { padding: 0; }
         </style>
     </head>
 
     <body>
         <sub id="linkback"><a href="http://coligo.io/markdown-editor-vuejs/">coligo.io</a></sub>
         <div id="app">
+            {{{ error_alert }}}
             <div class="row">
                 <div class="col-xs-12 header-text">
                     <h1>GitHub Markdown Preview</h1>
@@ -82,34 +84,51 @@
                 el: "#app",
                 data: {
                     github_base_url: '',
+                    error_alert: '',
                     raw_markdown: '',
                     rendered_markdown: ''
                 },
                 methods: {
                     renderPreview: function() {
-                        $('#ghmd-error').remove();
+                        this.error_alert = "";
 
                         var ghAPI = $.trim(this.github_base_url) || 'https://api.github.com';
                         if (ghAPI.substr(-1) != '/') ghAPI += '/';
 
                         if (!/^(http|https):\/\//.test(ghAPI)) {
-                            $('#app').prepend('<div class="alert alert-danger alert-dismissible" id="ghmd-error"><b>Error!</b> Invalid URL specified.</div>');
+                            this.error_alert = this.renderError('Invalid URL specified.');
                             return;
                         }
 
-                        // POST request to GitHub API
-                        this.$http({
+                        var onSuccess = function(response) {
+                            this.rendered_markdown = response.data;
+                        };
+
+                        var onError = function(response) {
+                            this.error_alert = this.renderError('Check the console for errors.');
+                            console.log(response);
+                        };
+
+                        var payload = {
                             url: ghAPI + 'markdown',
                             method: 'POST',
-                            data: {text: this.raw_markdown, mode: 'gfm'}
-                        }).then(function (response) {
-                            // success callback
-                            this.rendered_markdown = response.data;
-                        }, function (response) {
-                            // error callback
-                            $('#app').prepend('<div class="alert alert-danger alert-dismissible" id="ghmd-error"><b>Error!</b> Check the console for errors.</div>');
-                            console.log(response);
-                        });
+                            data: {
+                                text: this.raw_markdown,
+                                mode: 'gfm'
+                            }
+                        };
+
+                        // POST request to GitHub API
+                        this.$http(payload).then(onSuccess, onError);
+                    },
+                    renderError: function(text) {
+                        var markup = "";
+
+                        markup += '<div class="alert alert-danger">';
+                        markup += '  <b>Error!</b> ' + text;
+                        markup += '</div>';
+
+                        return markup;
                     }
                 }
             });
