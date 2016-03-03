@@ -305,7 +305,7 @@
                         markup += '    ' + event.user;
                         markup += '  </td>';
                         markup += '  <td>';
-                        markup += '    ' + event.type;
+                        markup += '    ' + event.type.split(/(?=[A-Z])/).join(" ");
                         markup += '  </td>';
                         markup += '  <td>';
                         markup += '    ' + event.payload;
