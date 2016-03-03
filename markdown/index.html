@@ -79,10 +79,19 @@
         <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
 
         <script>
+            $.urlparam = function(name, url) {
+                var uri = url || window.location.href,
+                    results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(uri);
+                if (!results) return null;
+                return results[1] || null;
+            };
+
+            var defaultBase = 'https://api.github.com';
+
             var vm = new Vue({
                 el: "#app",
                 data: {
-                    github_base_url: '',
+                    github_base_url: $.urlparam('base_url') || defaultBase,
                     error_alert: '',
                     raw_markdown: '',
                     rendered_markdown: ''
@@ -91,7 +100,7 @@
                     renderPreview: function() {
                         this.error_alert = "";
 
-                        var ghAPI = $.trim(this.github_base_url) || 'https://api.github.com';
+                        var ghAPI = $.trim(this.github_base_url) || defaultBase;
                         if (ghAPI.substr(-1) != '/') ghAPI += '/';
 
                         if (!/^(http|https):\/\//.test(ghAPI)) {
