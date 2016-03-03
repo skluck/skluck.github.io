@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>GitHub Organization Monitor</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+        <style>
+            body { background-color: #f4f7f7; }
+
+            .ghorg-header { color: #e85a71; }
+
+            #app { padding-bottom: 2em; margin: 2em 1em; }
+            #editor,
+            #preview {
+                height: 500px;
+                max-height: 500px;
+                margin-bottom: 2em;
+            }
+
+            .panel {
+                overflow-y: auto;
+                max-height: 40em;
+                padding: 1em;
+            }
+            #feed .btn-group { margin-bottom: .5em; }
+
+            .table { background: white; }
+        </style>
+    </head>
+
+    <body>
+        <div id="app" class="container-fluid">
+            {{{ error_alert }}}
+            <div class="row">
+                <div class="col-xs-12 ghorg-header">
+                    <h1>GitHub Organization Monitor</h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-md-6">
+                    <h4>GitHub Organization</h4>
+                    <input class="form-control" type="text" placeholder="org_name" v-model="organization">
+                </div>
+                <div class="col-xs-12 col-md-6">
+                    <h4>Customize GitHub API</h4>
+                    <input class="form-control" type="text" v-model="github_base_url" placeholder="https://api.github.com">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <h4>Feed</h4>
+                    <div id="feed">
+                        <div class="btn-toolbar">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-primary" @click="goNew">Refresh</button>
+                            </div>
+
+                            <div class="btn-group">
+                                <button type="button" id="ghorg-prev" class="ghorg-pager btn btn-default disabled" value="{{prevTarget}}" @click="goPrev">Prev</button>
+                                <button type="button" id="ghorg-next" class="ghorg-pager btn btn-default disabled" value="{{nextTarget}}" @click="goNext">Next</button>
+                                <button type="button" id="ghorg-last" class="ghorg-pager btn btn-default disabled" value="{{lastTarget}}" @click="goLast">Last</button>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-body">{{{ feed }}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/vue/1.0.16/vue.js"></script>
+        <script src="https://cdn.jsdelivr.net/vue.resource/0.7.0/vue-resource.min.js"></script>
+        <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+
+        <script>
+            $.urlparam = function(name, url) {
+                var uri = url || window.location.href,
+                    results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(uri);
+                if (!results) return null;
+                return results[1] || null;
+            };
+
+            var segment = window.location.hash,
+                defaultBase = 'https://api.github.com';
+
+            var vm = new Vue({
+                el: "#app",
+                data: {
+                    github_base_url: $.urlparam('base_url') || defaultBase,
+
+                    organization: segment.length > 0 ? segment.slice(1) : "",
+                    prevTarget: "",
+                    nextTarget: "",
+                    lastTarget: "",
+
+                    error_alert: '',
+                    feed: 'Enter an organization name to view its event feed.'
+                },
+                methods: {
+                    goNew: function() {
+                        var target = this.organization;
+
+                        var ghAPI = $.trim(this.github_base_url) || defaultBase;
+                        if (ghAPI.substr(-1) != '/') ghAPI += '/';
+
+                        window.location.hash = '#' + target;
+
+                        if (target.length === 0) {
+                            return;
+                        }
+
+                        this.renderFeed(ghAPI + 'users/' + target + '/received_events/public');
+                    },
+                    goPrev: function() {
+                        var target = this.validateTarget(this.prevTarget);
+                        if (target.length === 0) return;
+
+                        this.renderFeed(target);
+                    },
+                    goNext: function() {
+                        var target = this.validateTarget(this.nextTarget);
+                        if (target.length === 0) return;
+
+                        this.renderFeed(target);
+                    },
+                    goLast: function() {
+                        var target = this.validateTarget(this.lastTarget);
+                        if (target.length === 0) return;
+
+                        this.renderFeed(target);
+                    },
+
+                    validateTarget: function(target) {
+                        this.error_alert = "";
+
+                        if (!/^(http|https):\/\//.test(target)) {
+                            this.error_alert = this.renderError('Invalid link specified.');
+                            return "";
+                        }
+
+                        if (target.length === 0) {
+                            this.error_alert = this.renderError('Invalid link specified.');
+                            return "";
+                        }
+
+                        return target;
+                    },
+
+                    parseEvent: function(event) {
+                        var type = event.type.slice(0, -5);
+
+                        var newEvent = {
+                            type: type,
+
+                            user: event.actor.login,
+                            user_url: event.actor.url,
+                            user_icon_url: event.actor.avatar_url,
+
+                            time: event.created_at,
+
+                            repo: event.repo.name,
+                            repo_url: event.repo.url
+                        };
+
+                        newEvent.payload = this.parsePayload(type, event);
+                        return newEvent;
+                    },
+                    parsePayload: function(type, event) {
+
+                        // other events
+                        // https://developer.github.com/v3/activity/events/types/
+
+                        var meta = "";
+
+                        // PushEvent
+                        if (type === "Push") {
+
+                            meta += '<b>'+ event.payload.size +'</b>';
+                            meta += ' commits to ';
+                            meta += '<b>' + event.payload.ref.replace(/refs\/heads\//g, '') + '</b>';
+
+                        // IssueCommentEvent
+                        } else if (type == "IssueComment") {
+
+                            meta += '<b>'+ event.payload.action +'</b>';
+                            meta += ' comment in ';
+
+                            meta += '<a href="'+ event.payload.comment.url +'">';
+                            meta += '  Issue #'+ event.payload.issue.number;
+                            meta += '</a>';
+
+                        // IssuesEvent
+                        } else if (type == "Issues") {
+
+                            meta += '<b>'+ event.payload.action +'</b>';
+                            meta += ' ';
+
+                            meta += '<a href="'+ event.payload.issue.url +'">';
+                            meta += '  Issue #'+ event.payload.issue.number;
+                            meta += '</a>';
+
+                        // MemberEvent
+                        } else if (type == "Member") {
+
+                            meta += '<b>'+ event.payload.action +'</b>';
+                            meta += ' ';
+
+                            meta += event.payload.member.login + ' as collaborator';
+
+                        // MemberEvent
+                        } else if (type == "Create") {
+
+                            meta += 'created';
+                            meta += ' ' + event.payload.ref_type;
+
+                            if (event.payload.ref !== null) {
+                                meta += ' <b>'+ event.payload.ref +'</b>';
+                            }
+
+                        } else {
+                            console.log(type);
+                            console.log(event.payload);
+                        }
+
+                        return meta;
+                    },
+                    renderEvent: function(event) {
+                        var markup = "";
+
+                        markup += '<tr>';
+                        markup += '  <td>';
+                        markup += '    <a href="'+ event.user_url +'"><img src="'+ event.user_icon_url +'" width="30"></a>';
+                        markup += '    ' + event.user;
+                        markup += '  </td>';
+                        markup += '  <td>';
+                        markup += '    ' + event.type;
+                        markup += '  </td>';
+                        markup += '  <td>';
+                        markup += '    ' + event.payload;
+                        markup += '  </td>';
+                        markup += '  <td>';
+                        markup += '    <a href="'+  event.repo_url +'">'+ event.repo +'</a>';
+                        markup += '  </td>';
+                        markup += '  <td class="text-right">';
+                        markup += '    ' + event.time;
+                        markup += '  </td>';
+                        markup += '</tr>';
+
+                        return markup;
+                    },
+                    tableizeEvents: function(renderedEvents) {
+                        var markup = "";
+
+                        markup += '<table class="table table-striped">';
+                        markup += '  <thead>';
+                        markup += '    <tr>';
+                        markup += '      <th>User</th>';
+                        markup += '      <th>Event</th>';
+                        markup += '      <th>Details</th>';
+                        markup += '      <th>Repo</th>';
+                        markup += '      <th class="text-right">Time</th>';
+                        markup += '    </tr>';
+                        markup += '  </thead>';
+                        markup += '  <tbody>';
+                        markup +=      renderedEvents;
+                        markup += '  </tbody>';
+                        markup += '</table>';
+
+                        return markup;
+                    },
+
+                    renderFeed: function(target) {
+                        var onSuccess = function (response) {
+                            // success callback
+                            var headers = response.headers('link');
+                            var links = [];
+
+                            if (headers === undefined) headers = "";
+
+                            var f, link, rel,
+                                e = headers.split(/,\s*/);
+                            for (var i = 0; i<e.length; i++) {
+                                f = e[i].split(';');
+                                if (f.length !== 2) continue;
+
+                                link = f[0].replace(/[<>]/g, '');
+                                rel = /rel\=\"([a-z]+)\"/.exec(f[1]);
+                                rel = rel[1];
+
+                                links.push([link, rel]);
+                            }
+
+                            var events = response.data
+                                .map(this.parseEvent)
+                                .map(this.renderEvent)
+                                .join("");
+
+                            this.renderPagination(links);
+                            this.feed = this.renderTarget(target) + this.tableizeEvents(events);
+                        };
+
+                        var onError = function (response) {
+                            // error callback
+                            $('#app').prepend(this.renderError('Check the console for errors.'));
+                        };
+
+                        var payload = { url: target, method: 'GET' };
+
+                        // POST request to GitHub API
+                        this.$http(payload).then(onSuccess, onError);
+                    },
+                    renderTarget: function(targetURL) {
+                        var markup = "",
+                            page = $.urlparam('page', targetURL) || "";
+
+                        markup += '<h5>';
+                        if (page.length > 0) markup += '<span class="label label-default">'+ page +'</span>';
+                        markup += '  ' + targetURL;
+                        markup += '</h5>';
+
+                        return markup;
+                    },
+                    renderPagination: function(links) {
+
+                        $('.ghorg-pager')
+                            .addClass('disabled')
+                            .attr('disabled', true);
+
+                        var rel, link;
+                        for (var i = 0; i < links.length; i++) {
+                            link = links[i][0],
+                            rel = links[i][1];
+
+                            if (rel === 'prev') {
+                                this.prevTarget = link;
+
+                            } else if (rel === 'next') {
+                                this.nextTarget = link;
+
+                            } else if (rel === 'last') {
+                                this.lastTarget = link;
+                            }
+
+                            $('#ghorg-' + rel)
+                                .removeClass('disabled')
+                                .attr('disabled', false);
+                        }
+                    },
+                    renderError: function(text) {
+                        var markup = "";
+
+                        markup += '<div class="alert alert-danger">';
+                        markup += '  <b>Error!</b> ' + text;
+                        markup += '</div>';
+
+                        return markup;
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
