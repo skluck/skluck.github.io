@@ -181,7 +181,10 @@
 
                             meta += '<b>'+ event.payload.size +'</b>';
                             meta += ' commits to ';
-                            meta += '<b>' + event.payload.ref.replace(/refs\/heads\//g, '') + '</b>';
+
+                            meta += '<b>';
+                            meta += event.payload.ref.replace(/refs\/heads\//g, '');
+                            meta += '</b>';
 
                         // IssueCommentEvent
                         } else if (type == "IssueComment") {
@@ -211,7 +214,26 @@
 
                             meta += event.payload.member.login + ' as collaborator';
 
-                        // MemberEvent
+                        // PullRequestReviewComment
+                        } else if (type == "PullRequest") {
+
+                            meta += '<b>'+ event.payload.action +'</b>';
+
+                            meta += '<a href="'+ event.payload.pull_request.url +'">';
+                            meta += '  Pull Request #'+ event.payload.number;
+                            meta += '</a>';
+
+                        // PullRequestReviewCommentEvent
+                        } else if (type == "PullRequestReviewComment") {
+
+                            meta += '<b>'+ event.payload.action +'</b>';
+                            meta += ' comment on ';
+
+                            meta += '<a href="'+ event.payload.pull_request.url +'">';
+                            meta += '  Pull Request #'+ event.payload.pull_request.number;
+                            meta += '</a>';
+
+                        // CreateEvent
                         } else if (type == "Create") {
 
                             meta += 'created';
@@ -220,6 +242,35 @@
                             if (event.payload.ref !== null) {
                                 meta += ' <b>'+ event.payload.ref +'</b>';
                             }
+
+                        // DeleteEvent
+                        } else if (type == "Delete") {
+
+                            meta += 'deleted';
+                            meta += ' ' + event.payload.ref_type;
+
+                            if (event.payload.ref !== null) {
+                                meta += ' <b>'+ event.payload.ref +'</b>';
+                            }
+
+                        // ReleaseEvent
+                        } else if (type == "Release") {
+
+                            meta += '<b>'+ event.payload.action +'</b>';
+                            meta += ' release ';
+
+                            meta += '<a href="'+ event.payload.release.url +'">';
+                            meta += '  ' + event.payload.release.name;
+                            meta += '</a>';
+
+                        // ForkEvent
+                        } else if (type == "Fork") {
+
+                            meta += 'forked to ';
+
+                            meta += '<a href="'+ event.payload.forkee.url +'">';
+                            meta += '  ' + event.payload.forkee.full_name;
+                            meta += '</a>';
 
                         } else {
                             console.log(type);
