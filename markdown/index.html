@@ -11,20 +11,19 @@
             .header-text h1 { color: #e85a71; }
             .header-text sub { color: #454552; font-size: 50%; display: block; }
 
-            #app { padding-bottom: 2em; margin: 1em; }
+            #app { padding-bottom: 2em; margin: 2em 1em; }
             #linkback { position: absolute; top: .75em; right: .5em; font-size: 1em; }
+
             #editor,
             #preview {
-                height: 500px;
-                max-height: 500px;
-                margin-bottom: 2em;
-            }
-
-            .panel {
+                max-height: 35em;
                 overflow-y: auto;
-                max-height: 500px;
                 padding: 1em;
             }
+
+            #editor { height: 35em; font-family: monospace; }
+            #preview { min-height: 5em; }
+            #preview-button { margin: 1em 0; }
         </style>
     </head>
 
@@ -40,21 +39,27 @@
             <div class="row">
                 <div class="col-xs-12 col-md-6">
                     <h4>Editor</h4>
-                    <textarea id="editor" class="form-control" v-model="rawMarkdown"></textarea>
+                    <textarea id="editor" class="form-control" v-model="raw_markdown"></textarea>
+
+                    <div id="preview-button">
+                        <button type="button" class="btn btn-primary" @click="renderPreview">Preview</button>
+                    </div>
+
                 </div>
-                <div id="preview" class="col-xs-12 col-md-6">
+
+                <div class="col-xs-12 col-md-6">
                     <h4>Preview</h4>
-                    <div class="panel panel-default">
+                    <div id="preview" class="panel panel-default">
                         <div class="panel-body">
                             <article class="markdown-body">
                                 <!-- note the triple curly braces -->
-                                {{{renderedMarkdown}}}
+                                {{{ rendered_markdown }}}
                             </article>
                         </div>
                     </div>
 
                     <h4>Customize GitHub API</h4>
-                    <input id="gh-base" class="form-control" type="text" placeholder="https://api.github.com">
+                    <input class="form-control" type="text" v-model="github_base_url" placeholder="https://api.github.com">
 
                     <h4>Markdown Guides</h4>
                     <ul>
@@ -64,11 +69,6 @@
                     </ul>
                 </div>
 
-            </div>
-            <div class="row">
-                <div class="col-xs-12">
-                    <button type="button" class="btn btn-primary" @click="renderPreview">Preview</button>
-                </div>
             </div>
         </div>
 
@@ -81,18 +81,19 @@
             var vm = new Vue({
                 el: "#app",
                 data: {
-                    rawMarkdown: '',
-                    renderedMarkdown: ''
+                    github_base_url: '',
+                    raw_markdown: '',
+                    rendered_markdown: ''
                 },
                 methods: {
                     renderPreview: function() {
                         $('#ghmd-error').remove();
 
-                        var ghAPI = $.trim($('#gh-base').val()) || 'https://api.github.com';
+                        var ghAPI = $.trim(this.github_base_url) || 'https://api.github.com';
                         if (ghAPI.substr(-1) != '/') ghAPI += '/';
 
                         if (!/^(http|https):\/\//.test(ghAPI)) {
-                            $('#app').prepend('<div class="alert alert-danger" id="ghmd-error"><b>Error!</b> Invalid URL specified.</div>');
+                            $('#app').prepend('<div class="alert alert-danger alert-dismissible" id="ghmd-error"><b>Error!</b> Invalid URL specified.</div>');
                             return;
                         }
 
@@ -100,13 +101,13 @@
                         this.$http({
                             url: ghAPI + 'markdown',
                             method: 'POST',
-                            data: {text: this.rawMarkdown, mode: 'gfm'}
+                            data: {text: this.raw_markdown, mode: 'gfm'}
                         }).then(function (response) {
                             // success callback
-                            this.renderedMarkdown = response.data;
+                            this.rendered_markdown = response.data;
                         }, function (response) {
                             // error callback
-                            $('#app').prepend('<div class="alert alert-danger" id="ghmd-error"><b>Error!</b> Check the console for errors.</div>');
+                            $('#app').prepend('<div class="alert alert-danger alert-dismissible" id="ghmd-error"><b>Error!</b> Check the console for errors.</div>');
                             console.log(response);
                         });
                     }
