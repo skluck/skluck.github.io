@@ -67,9 +67,10 @@
                             </div>
 
                             <div class="btn-group">
-                                <button type="button" id="ghorg-prev" class="ghorg-pager btn btn-default disabled" value="{{prevTarget}}" @click="goPrev">Prev</button>
-                                <button type="button" id="ghorg-next" class="ghorg-pager btn btn-default disabled" value="{{nextTarget}}" @click="goNext">Next</button>
-                                <button type="button" id="ghorg-last" class="ghorg-pager btn btn-default disabled" value="{{lastTarget}}" @click="goLast">Last</button>
+                                <button type="button" id="ghorg-first" class="ghorg-pager btn btn-default disabled" value="{{ firstTarget }}" @click="goFirst">First</button>
+                                <button type="button" id="ghorg-prev" class="ghorg-pager btn btn-default disabled" value="{{ prevTarget }}" @click="goPrev">Prev</button>
+                                <button type="button" id="ghorg-next" class="ghorg-pager btn btn-default disabled" value="{{ nextTarget }}" @click="goNext">Next</button>
+                                <button type="button" id="ghorg-last" class="ghorg-pager btn btn-default disabled" value="{{ lastTarget }}" @click="goLast">Last</button>
                             </div>
                         </div>
 
@@ -102,6 +103,7 @@
                     github_base_url: $.urlparam('base_url') || defaultBase,
 
                     organization: segment.length > 0 ? segment.slice(1) : "",
+                    firstTarget: "",
                     prevTarget: "",
                     nextTarget: "",
                     lastTarget: "",
@@ -123,6 +125,12 @@
                         }
 
                         this.renderFeed(ghAPI + 'users/' + target + '/received_events/public');
+                    },
+                    goFirst: function() {
+                        var target = this.validateTarget(this.firstTarget);
+                        if (target.length === 0) return;
+
+                        this.renderFeed(target);
                     },
                     goPrev: function() {
                         var target = this.validateTarget(this.prevTarget);
@@ -395,7 +403,10 @@
                             link = links[i][0],
                             rel = links[i][1];
 
-                            if (rel === 'prev') {
+                            if (rel === 'first') {
+                                this.firstTarget = link;
+
+                            } else if (rel === 'prev') {
                                 this.prevTarget = link;
 
                             } else if (rel === 'next') {
