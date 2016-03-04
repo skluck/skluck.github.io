@@ -209,7 +209,7 @@
                             meta += '<b>'+ event.payload.action +'</b>';
                             meta += ' comment in ';
 
-                            meta += '<a href="'+ event.payload.comment.url +'">';
+                            meta += '<a href="'+ event.payload.comment.html_url +'">';
                             meta += '  Issue #'+ event.payload.issue.number;
                             meta += '</a>';
 
@@ -219,7 +219,7 @@
                             meta += '<b>'+ event.payload.action +'</b>';
                             meta += ' ';
 
-                            meta += '<a href="'+ event.payload.issue.url +'">';
+                            meta += '<a href="'+ event.payload.issue.html_url +'">';
                             meta += '  Issue #'+ event.payload.issue.number;
                             meta += '</a>';
 
@@ -236,7 +236,7 @@
 
                             meta += '<b>'+ event.payload.action +'</b>';
 
-                            meta += '<a href="'+ event.payload.pull_request.url +'">';
+                            meta += '<a href="'+ event.payload.pull_request.html_url +'">';
                             meta += '  Pull Request #'+ event.payload.number;
                             meta += '</a>';
 
@@ -246,7 +246,7 @@
                             meta += '<b>'+ event.payload.action +'</b>';
                             meta += ' comment on ';
 
-                            meta += '<a href="'+ event.payload.pull_request.url +'">';
+                            meta += '<a href="'+ event.payload.pull_request.html_url +'">';
                             meta += '  Pull Request #'+ event.payload.pull_request.number;
                             meta += '</a>';
 
@@ -276,7 +276,7 @@
                             meta += '<b>'+ event.payload.action +'</b>';
                             meta += ' release ';
 
-                            meta += '<a href="'+ event.payload.release.url +'">';
+                            meta += '<a href="'+ event.payload.release.html_url +'">';
                             meta += '  ' + event.payload.release.name;
                             meta += '</a>';
 
@@ -285,7 +285,7 @@
 
                             meta += 'forked to ';
 
-                            meta += '<a href="'+ event.payload.forkee.url +'">';
+                            meta += '<a href="'+ event.payload.forkee.html_url +'">';
                             meta += '  ' + event.payload.forkee.full_name;
                             meta += '</a>';
 
