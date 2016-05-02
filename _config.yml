@@ -1,0 +1,35 @@
+# Site settings
+title: Kluck Engineering
+description: > # this means to ignore newlines until "baseurl:"
+  A small website for stuff
+baseurl: "/"
+#url:
+
+# Build settings
+markdown: kramdown
+paginate: 5 # pagination based on number of posts
+paginate_path: "page/:num"
+highlighter: rouge
+gems: [jekyll-paginate]
+
+# author info
+author: Steve Kluck
+bio: Engineer of Stuff and Thangs
+email_md5: 5082f1ea416d6ca8d9fa947e9eb4a8f1
+twitter_username:
+github_username: skluck
+
+# Theming options
+# These settings are mandatory.
+theme:              'blue-pink'
+
+# drawer theming
+drawer:
+  text_color:       'grey-600'
+  header_color:     'blue-500'
+  navigation_color: 'grey-200'
+
+# footer theming
+footer:
+  text_color: 'blue-grey-200'
+  color: 'blue-grey-600'
