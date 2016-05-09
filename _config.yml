@@ -3,7 +3,7 @@ title: Kluck Engineering
 description: > # this means to ignore newlines until "baseurl:"
   A small website for stuff
 baseurl: "/"
-#url:
+url: kluck.engineering
 
 # Build settings
 markdown: kramdown
