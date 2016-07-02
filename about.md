@@ -70,7 +70,7 @@ I mostly focus on backend applications and services, but can work with frontend 
 
 #### 2012 - Present
 
-##### Quicken Loans • Detroit, MI • Sr. Software Engineer
+##### Quicken Loans • Detroit, MI • Principal Software Engineer
 
 - Lead developer on only engineering team within Center of Excellence.
 - Design, implement, and maintain PHP applications.
