@@ -11,7 +11,7 @@ I mostly focus on backend applications and services, but can work with frontend 
 
 ---
 
-## Eduction
+## Education
 
 ##### Wayne State University
 
