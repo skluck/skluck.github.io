@@ -32,6 +32,10 @@ I mostly focus on backend applications and services, but can work with frontend 
 
 #### I know these pretty well.
 
+- **Elixir**
+    - Plug
+    - Phoenix
+    - Erlang
 - **Docker**
 - **Postgres**
 - [Consul](https://www.consul.io)
@@ -58,10 +62,6 @@ I mostly focus on backend applications and services, but can work with frontend 
 
 #### I like these and am actively improving my knowledge.
 
-- **Elixir**
-    - Plug
-    - Phoenix
-    - Erlang
 - [Rethink DB](http://rethinkdb.com)
 
 ---
