@@ -9,12 +9,11 @@ theme_settings:
   title: Kluck Engineering
   avatar: avatar.png
   gravatar: 5082f1ea416d6ca8d9fa947e9eb4a8f1
-  description: "A small website for stuff"
+  description: 
 
   # Header and footer text
   header_text: >
-     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-     <p>Remove all header text in <code>_config.yml</code> to disable this feature.</p>
+     <p>A small website for stuff</p>
   header_text_feature_image:
   footer_text: >
    Powered by <a href="http://jekyllrb.com">Jekyll</a> with <a href="https://rohanchandra.github.io/project/type/">Type Theme</a>
