@@ -29,29 +29,6 @@ I mostly focus on backend applications and services, but can work with frontend 
     - Doctrine
     - PHP 7
 - **MySQL**
-
-#### I know these pretty well.
-
-- **Elixir**
-    - Plug
-    - Phoenix
-    - Erlang
-- **CSS**
-    - SASS
-    - Responsive Design
-    - Progressive Enhancement
-- **Javascript**
-    - JQuery
-    - VueJS
-- **Docker**
-- **Postgres**
-- [Consul](https://www.consul.io)
-- **Build / Deployment pipelines**
-    - Grunt, Gulp
-    - WinRM
-    - GitHub / TFS API
-    - Jenkins, Travis
-- Linuxy things
 - **AWS**
     - EC2, S3
     - Elastic Beanstalk, CodeDeploy
@@ -59,6 +36,29 @@ I mostly focus on backend applications and services, but can work with frontend 
 - **APIs**
     - REST
     - Hypermedia
+- **Build / Deployment pipelines**
+    - Grunt, Gulp
+    - WinRM
+    - GitHub / TFS API
+    - Jenkins, Travis
+- **CSS**
+    - SASS
+    - Responsive Design
+    - Progressive Enhancement
+
+#### I know these pretty well.
+
+- **Elixir**
+    - Plug
+    - Phoenix
+    - Erlang
+- **Javascript**
+    - JQuery
+    - VueJS
+- **Docker**
+- **Postgres**
+- [Consul](https://www.consul.io)
+- Linuxy things
 - OAuth2 / OpenID Connect
 
 #### I know these less well, but enough to be dangerous.
