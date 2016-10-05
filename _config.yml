@@ -1,5 +1,5 @@
 # Site settings
-baseurl: /
+baseurl:
 #url: kluck.engineering
 
 theme_settings:
