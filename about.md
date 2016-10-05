@@ -36,6 +36,13 @@ I mostly focus on backend applications and services, but can work with frontend 
     - Plug
     - Phoenix
     - Erlang
+- **CSS**
+    - SASS
+    - Responsive Design
+    - Progressive Enhancement
+- **Javascript**
+    - JQuery
+    - VueJS
 - **Docker**
 - **Postgres**
 - [Consul](https://www.consul.io)
@@ -45,17 +52,18 @@ I mostly focus on backend applications and services, but can work with frontend 
     - GitHub / TFS API
     - Jenkins, Travis
 - Linuxy things
+- **AWS**
+    - EC2, S3
+    - Elastic Beanstalk, CodeDeploy
+    - API / SDK
 - **APIs**
     - REST
     - Hypermedia
+- OAuth2 / OpenID Connect
 
 #### I know these less well, but enough to be dangerous.
 
-- **CSS**
-    - SASS
-    - Responsive Design
 - **Javascript**
-    - JQuery
     - ES6
     - React
     - Server-side rendering
