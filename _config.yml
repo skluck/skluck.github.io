@@ -1,7 +1,4 @@
 # Site settings
-title: Kluck Engineering
-description: > # this means to ignore newlines until "baseurl:"
-  A small website for stuff
 #baseurl: /
 #url: kluck.engineering
 
@@ -9,7 +6,7 @@ theme_settings:
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
   # Meta
-  title: Type Theme
+  title: Kluck Engineering
   avatar: avatar.png
   gravatar: 5082f1ea416d6ca8d9fa947e9eb4a8f1
   description: "A small website for stuff"
@@ -39,7 +36,7 @@ theme_settings:
   stack_exchange:  # Full URL
   steam:
   tumblr:
-  twitter: "twitter"
+  twitter:
   wordpress:
   youtube:
 
