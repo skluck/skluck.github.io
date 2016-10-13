@@ -13,7 +13,7 @@ I mostly focus on backend applications and services, but can work with frontend 
 
 I write software. 
 
-In **2006** I joined HFHS. I've written CRMs and patient-management systems for [Hnry Ford Health System](http://www.henryford.com).
+In **2006** I joined HFHS. I've written CRMs and patient-management systems for [Henry Ford Health System](http://www.henryford.com).
 
 Then I joined Quicken Loans in **2012**. I helped them launch the future of mortgage servicing with [MyQL Servicing](https://myql.com). Since the I've focused on building the foundation for PHP applications within QL. This includes deployment, CI, unit testing, and other system architecture for PHP and beyond.
 
