@@ -5,9 +5,21 @@ permalink: about
 icon: info_outline
 ---
 
-Hello. I am a developer based in SE Michigan.
+Hello. I am a software developer based in SE Michigan.
 
 I mostly focus on backend applications and services, but can work with frontend technologies and databases as well.
+
+## Who the hell am I?
+
+I write software. 
+
+In **2006** I joined HFHS. I've written CRMs and patient-management systems for [Hnry Ford Health System](http://www.henryford.com).
+
+Then I joined Quicken Loans in **2012**. I helped them launch the future of mortgage servicing with [MyQL Servicing](https://myql.com). Since the I've focused on building the foundation for PHP applications within QL. This includes deployment, CI, unit testing, and other system architecture for PHP and beyond.
+
+Elixir is pretty cool, I've spent a lot of time exploring and learning about its ecosystem.
+
+
 
 ---
 
