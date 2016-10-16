@@ -94,9 +94,9 @@ Elixir is pretty cool, I've spent a lot of time exploring and learning about its
 > - Design, implement, and maintain PHP applications.
 > - Maintain core shared PHP libraries for use throughout company. 
 > - Mentor other engineers, define best practices.
-
-##### Major Projects
-
+> 
+> ##### Major Projects
+> 
 > - **Deployment platform for on-premise and cloud**
 >   - Built PHP and MySQL-based web frontend and agent job processor for deployments.
 >   - Supports any unix-based app, with prototype support for Windows through WinRM. Deploys from GitHub to on-premise, AWS Elastic Beanstalk, CodeDeploy, or S3.
