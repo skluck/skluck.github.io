@@ -90,6 +90,8 @@ Elixir is pretty cool, I've spent a lot of time exploring and learning about its
 
 #### Quicken Loans • Detroit, MI • Principal Software Engineer
 
+> ##### Role and Responsibilities
+>
 > - Lead developer on only engineering team within Center of Excellence.
 > - Design, implement, and maintain PHP applications.
 > - Maintain core shared PHP libraries for use throughout company. 
@@ -121,6 +123,8 @@ Elixir is pretty cool, I've spent a lot of time exploring and learning about its
 
 #### Henry Ford Health System • Detroit, MI • Programmer Analyst
 
+> ##### Role and Responsibilities
+>
 > - Built and maintained PHP/MySQL application for electronic medical records
 > - Program several public-facing recruiting surveys for research studies
 > - Collate and import polysomnogram data from multiple physical locations 
