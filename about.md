@@ -88,7 +88,9 @@ Elixir is pretty cool, I've spent a lot of time exploring and learning about its
 
 ### 2012 - Present
 
-#### Quicken Loans • Detroit, MI • Principal Software Engineer
+#### Quicken Loans • Detroit, MI 
+
+Principal Software Engineer
 
 > ##### Role and Responsibilities
 >
@@ -121,7 +123,9 @@ Elixir is pretty cool, I've spent a lot of time exploring and learning about its
 
 ### 2006 - 2012
 
-#### Henry Ford Health System • Detroit, MI • Programmer Analyst
+#### Henry Ford Health System • Detroit, MI
+
+Programmer Analyst
 
 > ##### Role and Responsibilities
 >
