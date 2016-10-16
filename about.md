@@ -86,9 +86,9 @@ Elixir is pretty cool, I've spent a lot of time exploring and learning about its
 
 ## Work Experience
 
-#### 2012 - Present
+### 2012 - Present
 
-##### Quicken Loans • Detroit, MI • Principal Software Engineer
+#### Quicken Loans • Detroit, MI • Principal Software Engineer
 
 > - Lead developer on only engineering team within Center of Excellence.
 > - Design, implement, and maintain PHP applications.
@@ -117,9 +117,9 @@ Elixir is pretty cool, I've spent a lot of time exploring and learning about its
 > - **Service Virtualization**
 >   - Building Elixir and RethinkDB based mock engine and proxy for service mocking to allow apps to virtualize vendor or internal http services during failure states, load testing, and more.
 
-#### 2006 - 2012
+### 2006 - 2012
 
-##### Henry Ford Health System • Detroit, MI • Programmer Analyst
+#### Henry Ford Health System • Detroit, MI • Programmer Analyst
 
 > - Built and maintained PHP/MySQL application for electronic medical records
 > - Program several public-facing recruiting surveys for research studies
