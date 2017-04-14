@@ -17,7 +17,6 @@
         -
             name: "Logger (PSR-3 Logger)"
             repo: "quickenloans-mcp/mcp-logger"
-
 -
     name: "Hal Deployment Platform"
     description: |

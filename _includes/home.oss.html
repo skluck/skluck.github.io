@@ -10,8 +10,14 @@
 
     {% for project in site.data.oss %}
         <section>
-test
-        <section>
+            <a href="#" class="image"><img src="images/pic01.jpg" alt="" data-position="center center"></a>
+            <div class="content">
+                <div class="inner">
+                    <h2>{{ project.name }}</h2>
+                    <p>{{ project.description }}</p>
+                </div>
+            </div>
+        </section>
     {% endfor %}
 
 </section>
