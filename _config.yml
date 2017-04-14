@@ -9,8 +9,8 @@
 title: "Kluck Engineering"
 email: "steve at kluck.engineering"
 description: ""
-baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://kluck.engineering"
+baseurl: "" # the subpath of your site, e.g. /blog
 
 # Social settings
 whoami: "Steve Kluck"

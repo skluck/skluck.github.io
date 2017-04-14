@@ -57,9 +57,32 @@ title: "Kluck Engineering"
         </p>
     </div>
 
-    <section>
-        todo
-    </section>
+    {% for project in site.data.oss %}
+        <section>
+            <a href="#" class="image"><img src="images/pic01.jpg" alt="" data-position="center center" /></a>
+            <div class="content">
+                <div class="inner">
+                    <h2>{{ project.name }}</h2>
+                    <p>{{ project.description }}</p>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <tbody>
+                                {% for repo in project.repos %}
+                                    <tr>
+                                        <td>{{ repo.name }}</td>
+                                        <td>a href="https://github.com/{{ repo.repo }}">{{ repo.repo }}</a></td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        <section>
+    {% endfor %}
+
 </section>
 
 <!-- Who -->
