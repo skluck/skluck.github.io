@@ -1,4 +1,24 @@
 -
+    name: "MCP"
+    description: |
+        PHP package ecosystem developed at Quicken Loans. This mostly consists of
+        high-quality libraries that solve a common need of developers and their web applications.
+
+    repos:
+        -
+            name: "Panthor (Web Microframework)"
+            repo: "quickenloans-mcp/mcp-panthor"
+        -
+            name: "Common (Datetime, GUID utils)"
+            repo: "quickenloans-mcp/mcp-common"
+        -
+            name: "Cache (Caching standard)"
+            repo: "quickenloans-mcp/mcp-cache"
+        -
+            name: "Logger (PSR-3 Logger)"
+            repo: "quickenloans-mcp/mcp-logger"
+
+-
     name: "Hal Deployment Platform"
     description: |
         Hal is a deployment and release platform. It is written in PHP and supports a
