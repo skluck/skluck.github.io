@@ -22,7 +22,7 @@
     description: |
         Hal is a deployment and release platform. It is written in PHP and supports a
         fast and simple way to deploy any type of application to any type of environment
-        such as AWS or Private datacenters.
+        including AWS and private datacenters.
 
         <br><br>
         It supports AWS, Docker, credential storage, encrypted configuration, access control
