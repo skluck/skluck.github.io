@@ -28,7 +28,7 @@
 				border-left: solid 1px _palette(border);
 			}
 
-			.icon {
+			> .icon:first-child {
 				@include vendor('transition', (
 					'opacity #{_duration(activation) * 0.5} ease',
 					'transform #{_duration(activation) * 0.5} ease'
@@ -43,7 +43,7 @@
 
 			@for $i from 1 through _misc(max-features) {
 				&:nth-child(#{$i}) {
-					.icon {
+					> .icon:first-child {
 						@include vendor('transition-delay', '#{(_duration(transition) * 0.75 * $i)}');
 					}
 				}
@@ -52,7 +52,7 @@
 
 		&.inactive {
 			section {
-				.icon {
+				> .icon:first-child {
 					@include vendor('transform', 'scale(0.5)');
 					opacity: 0;
 				}
