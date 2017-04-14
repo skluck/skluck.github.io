@@ -1,0 +1,92 @@
+-
+    name: "Celery Man - Cinco Identity Generator"
+    description: |
+      Desktop emulator for Cinco Identity Generator 2.5.
+
+      Based on Celery Man by <a href="https://www.youtube.com/watch?v=MHWBEK8w_YY">Adult Swim</a>
+      and <a href="http://celeryman.alexmeub.com/">Alex Meub</a>.
+
+    icon: "fa-user"
+    try: "http://kluck.engineering/celery-man"
+    source: "https://github.com/skluck/celery-man"
+-
+    name: "Skill Evaluation Survey App"
+    description: |
+        Simple single page app for filling out surveys for evaluating skill levels for peers or self-evaluations.
+
+        <br><sub>
+            <a href="https://vuejs.org/">Vue JS 2.0</a>, <a href="http://semantic-ui.com/">Semantic UI 2.2</a>
+        </sub>
+
+    icon: "fa-pencil"
+    try: "http://kluck.engineering/skill-survey"
+    source: "https://github.com/skluck/skill-survey"
+-
+    name: "GitHub Dashboard"
+    description: |
+        View projects and milestones from many repos and GitHub instances on a single screen.
+
+        <br><sub>
+            <a href="https://vuejs.org/">Vue JS 2.2</a>, <a href="http://semantic-ui.com/">Semantic UI 2.2</a>
+        </sub>
+
+    icon: "fa-clock-o"
+    try: "http://kluck.engineering/github-dashboard"
+    source: "https://github.com/skluck/github-dashboard"
+-
+    name: "HTML Screensaver Clock"
+    description: |
+        Colorful HTML clock for use as a screensaver.
+
+        Single-file html/js clock screensaver with no external dependencies to provide a
+        prettier alternative to the built-in clock screensavers.
+
+    icon: "fa-tachometer"
+    try: "http://kluck.engineering/screensaver-clock"
+    source: "https://github.com/skluck/screensaver-clock"
+-
+    name: "GitHub Organization Monitor"
+    description: |
+        Monitor the most recent 300 events for a GitHub organization or user.
+
+        <br><sub>
+            <a href="https://vuejs.org/">Vue JS 1.x</a>, Vue JS Resource
+        </sub>
+
+    icon: "fa-sitemap"
+    try: "http://kluck.engineering/github-organization-monitor"
+    source: "https://github.com/skluck/github-organization-monitor"
+-
+    name: "GitHub Markdown Previewer"
+    description: |
+        Previewing markdown through GitHub’s flavor of markdown.
+
+        <br><sub>
+            <a href="https://vuejs.org/">Vue JS 1.x</a>
+        </sub>
+
+    icon: "fa-file-text"
+    try: "http://kluck.engineering/github-markdown-previewer"
+    source: "https://github.com/skluck/github-markdown-previewer"
+-
+    name: "Pinger Internet Connectivity Tester"
+    description: |
+        Simple pinger app for testing internet connectivity.
+
+        By default, google.com is pinged every 5 seconds while the app is enabled. Pinging can be toggled within the app.
+
+        <br><sub>
+            <a href="https://vuejs.org/">Vue JS 2.0</a>, <a href="http://primercss.io/">Primer CSS 4.2</a>
+        </sub>
+
+    icon: "fa-wifi"
+    try: "http://kluck.engineering/pinger"
+    source: "https://github.com/skluck/pinger"
+-
+    name: "Yule Log"
+    description: |
+        The best fireplace yule log ever.
+
+    icon: "fa-fire"
+    try: "http://kluck.engineering/yule"
+    source: "https://github.com/"

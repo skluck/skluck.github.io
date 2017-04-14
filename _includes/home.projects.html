@@ -7,4 +7,26 @@
             tools and prototypes on GitHub.
         </p>
     </div>
+
+    <div class="features">
+        {% for project in site.data.projects %}
+            <section>
+                <span class="icon major {{ project.icon }}"></span>
+                <h3>{{ project.name }}</h3>
+                <p>{{ project.description }}</p>
+
+                <ul class="actions">
+                    <li><a href="{{ project.try }}" class="button special small ">Try it</a></li>
+                    <li><a href="{{ project.source }}" class="button small icon fa-github">Source Code</a></li>
+                </ul>
+            </section>
+        {% endfor %}
+    </div>
+
+    <ul class="actions">
+        <li>
+            <a href="https://github.com/skluck" class="button special icon fa-github">See more on GitHub</a>
+        </li>
+    </ul>
+
 </section>
