@@ -53,13 +53,14 @@ title: "Kluck Engineering"
     <div class="inner">
         <h2>Open Source</h2>
         <p>
-            In addition to the small projects mentioned <a href="#what" class="scrolly">elsewhere</a>, I also maintain many production-stable open source projects.
+            In addition to the small projects mentioned <a href="#what" class="scrolly">elsewhere</a>,
+            I also maintain many production-stable open source projects.
         </p>
     </div>
 
     {% for project in site.data.oss %}
         <section>
-            <a href="#" class="image"><img src="images/pic01.jpg" alt="" data-position="center center" /></a>
+            <a href="#" class="image"><img src="images/pic01.jpg" alt="" data-position="center center"></a>
             <div class="content">
                 <div class="inner">
                     <h2>{{ project.name }}</h2>
@@ -71,7 +72,7 @@ title: "Kluck Engineering"
                                 {% for repo in project.repos %}
                                     <tr>
                                         <td>{{ repo.name }}</td>
-                                        <td>a href="https://github.com/{{ repo.repo }}">{{ repo.repo }}</a></td>
+                                        <td><a href="https://github.com/{{ repo.repo }}">{{ repo.repo }}</a></td>
                                     </tr>
                                 {% endfor %}
                             </tbody>
