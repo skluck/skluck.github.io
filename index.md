@@ -1,20 +1,20 @@
 ---
 layout: default
-title: Hyperspace by HTML5 UP
+title: Kluck Engineering
 ---
 
 <!-- Sidebar -->
 <section id="sidebar">
-	<div class="inner">
-		<nav>
-			<ul>
-				<li><a href="#intro">Welcome</a></li>
-				<li><a href="#one">Who we are</a></li>
-				<li><a href="#two">What we do</a></li>
-				<li><a href="#three">Get in touch</a></li>
-			</ul>
-		</nav>
-	</div>
+    <div class="inner">
+        <nav>
+            <ul>
+                <li><a href="#intro">Intro</a></li>
+                <li><a href="#what">Projects and prototypes</a></li>
+                <li><a href="#oss">Open Source</a></li>
+                <li><a href="#who">Who am I?</a></li>
+            </ul>
+        </nav>
+    </div>
 </section>
 
 <!-- Wrapper -->
@@ -22,95 +22,42 @@ title: Hyperspace by HTML5 UP
 
 <!-- Intro -->
 <section id="intro" class="wrapper style1 fullscreen fade-up">
-	<div class="inner">
-		<h1>Hyperspace</h1>
-		<p>Just another fine responsive site template designed by <a href="http://html5up.net">HTML5 UP</a><br />
-		and released for free under the <a href="http://html5up.net/license">Creative Commons</a>.</p>
-		<ul class="actions">
-			<li><a href="#one" class="button scrolly">Learn more</a></li>
-		</ul>
-	</div>
+    <div class="inner">
+        <h1 class="major">Kluck.Engineering</h1>
+        <p>
+            Projects, prototypes and sometimes writings by a software engineer in Detroit.
+        </p>
+
+        <ul class="actions">
+            <li><a href="#what" class="button scrolly">Projects</a></li>
+            <li><a href="#oss" class="button scrolly">Open Source</a></li>
+            <li><a href="#who" class="button scrolly">About Me</a></li>
+        </ul>
+    </div>
 </section>
 
-<!-- One -->
-<section id="one" class="wrapper style2 spotlights">
-	<section>
-		<a href="#" class="image"><img src="images/pic01.jpg" alt="" data-position="center center" /></a>
-		<div class="content">
-			<div class="inner">
-				<h2>Sed ipsum dolor</h2>
-				<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
-				<ul class="actions">
-					<li><a href="#" class="button">Learn more</a></li>
-				</ul>
-			</div>
-		</div>
-	</section>
-	<section>
-		<a href="#" class="image"><img src="images/pic02.jpg" alt="" data-position="top center" /></a>
-		<div class="content">
-			<div class="inner">
-				<h2>Feugiat consequat</h2>
-				<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
-				<ul class="actions">
-					<li><a href="#" class="button">Learn more</a></li>
-				</ul>
-			</div>
-		</div>
-	</section>
-	<section>
-		<a href="#" class="image"><img src="images/pic03.jpg" alt="" data-position="25% 25%" /></a>
-		<div class="content">
-			<div class="inner">
-				<h2>Ultricies aliquam</h2>
-				<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
-				<ul class="actions">
-					<li><a href="#" class="button">Learn more</a></li>
-				</ul>
-			</div>
-		</div>
-	</section>
+
+<!-- What - Projects and Prototypes -->
+<section id="what" class="wrapper style2 fade-up">
+    <div class="inner">
+        <h2>Projects and Prototypes</h2>
+        <p>
+            I like to experiment (mostly with javascript or single page apps) and create small
+            tools and prototypes on GitHub.
+        </p>
+    </div>
 </section>
 
-<!-- Two -->
-<section id="two" class="wrapper style3 fade-up">
-	<div class="inner">
-		<h2>What we do</h2>
-		<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
-		<div class="features">
-			<section>
-				<span class="icon major fa-code"></span>
-				<h3>Lorem ipsum amet</h3>
-				<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-			</section>
-			<section>
-				<span class="icon major fa-lock"></span>
-				<h3>Aliquam sed nullam</h3>
-				<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-			</section>
-			<section>
-				<span class="icon major fa-cog"></span>
-				<h3>Sed erat ullam corper</h3>
-				<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-			</section>
-			<section>
-				<span class="icon major fa-desktop"></span>
-				<h3>Veroeros quis lorem</h3>
-				<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-			</section>
-			<section>
-				<span class="icon major fa-chain"></span>
-				<h3>Urna quis bibendum</h3>
-				<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-			</section>
-			<section>
-				<span class="icon major fa-diamond"></span>
-				<h3>Aliquam urna dapibus</h3>
-				<p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
-			</section>
-		</div>
-		<ul class="actions">
-			<li><a href="#" class="button">Learn more</a></li>
-		</ul>
-	</div>
+<!-- Open Source -->
+<section id="oss" class="wrapper style3 spotlights">
+    <div class="inner">
+        <h2>Open Source</h2>
+        <p>
+            In addition to the small projects mentioned <a href="#what" class="scrolly">elsewhere</a>, I also maintain many production-stable open source projects.
+        </p>
+    </div>
+
+    <section>
+        todo
+    </section>
 </section>

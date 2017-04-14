@@ -6,34 +6,27 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Hyperspace
-email: youremailaddress@gmail.com
-description: The Jekyll version of the Hyperspace theme by HTML5 UP.
-baseurl: "/hyperspace-jekyll-theme" # the subpath of your site, e.g. /blog
-url: "https://andrewbanchich.gitlab.io" # the base hostname & protocol for your site
+title: "Kluck Engineering"
+email: "steve at kluck.engineering"
+description: ""
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://kluck.engineering"
 
 # Social settings
-500px_url: 
-facebook_url: https://facebook.com
-github_url: 
-gitlab_url: https://gitlab.com/u/andrewbanchich
-googleplus_url: https://plus.google.com/u/0/+AndrewBanchich
-instagram_url: https://instagram.com
-linkedin_url: https://www.linkedin.com/in/andrew-banchich-a4ba1195
-pinterest_url: 
-slack_url: 
-twitter_url: https://twitter.com/andrewbanchich
+github_url: "https://github.com/skluck"
+
+job:
+    title: "Principal Software Engineer"
+    company: "Quicken Loans"
+    responsibilities:
+      - "Lead developer on engineering team within QL Enterprise Services."
+      - "Design, implement, and maintain PHP applications."
+      - "Maintain core shared PHP libraries for use throughout company."
+      - "Develop release pipeline platform."
+      - "Mentor other engineers, define best practices."
+
 
 # Build settings
-markdown: kramdown
+markdown: "kramdown"
 
-# Plugin: jekyll-seo-tag
-twitter:
-  username: andrewbanchich
-# Add one or more of the following
-facebook:
-  app_id: 
-  publisher: 
-  admins: 
-logo:
-google_site_verification: 
+logo: ""

@@ -1,4 +1,15 @@
+# Personal website / blog / etc
+
+Available at:
+- [skluck.github.io](http://skluck.github.io)
+- [kluck.engineering](http://kluck.engineering)
+
+Jekyll protips:
+- https://gist.github.com/smutnyleszek/9803727
+
 # Hyperspace - Jekyll Theme
+
+Original source: https://github.com/andrewbanchich/hyperspace-jekyll-theme
 
 A Jekyll version of the "Hyperspace" theme by HTML5 UP.
 
@@ -41,18 +52,18 @@ aj@lkn.io | @ajlkn
 
 Credits:
 
-	Demo Images:
-		Unsplash (unsplash.com)
+    Demo Images:
+        Unsplash (unsplash.com)
 
-	Icons:
-		Font Awesome (fortawesome.github.com/Font-Awesome)
+    Icons:
+        Font Awesome (fortawesome.github.com/Font-Awesome)
 
-	Other:
-		jQuery (jquery.com)
-		html5shiv.js (@afarkas @jdalton @jon_neal @rem)
-		Misc. Sass functions (@HugoGiraudel)
-		Respond.js (j.mp/respondjs)
-		Skel (skel.io)
+    Other:
+        jQuery (jquery.com)
+        html5shiv.js (@afarkas @jdalton @jon_neal @rem)
+        Misc. Sass functions (@HugoGiraudel)
+        Respond.js (j.mp/respondjs)
+        Skel (skel.io)
 ```
 
 Repository [Jekyll logo](https://github.com/jekyll/brand) icon licensed under a [Creative Commons Attribution 4.0 International License](http://choosealicense.com/licenses/cc-by-4.0/).
