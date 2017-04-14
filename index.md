@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Kluck Engineering
+title: "Kluck Engineering"
 ---
 
 <!-- Sidebar -->
@@ -61,3 +61,66 @@ title: Kluck Engineering
         todo
     </section>
 </section>
+
+<!-- Who -->
+<section id="who" class="wrapper style1 fade-up">
+    <div class="inner">
+        <h2>Who am I?</h2>
+
+        <p>
+            Hello. I am a fullstack software developer based in SE Michigan.
+
+            I mostly focus on backend applications and services, but can work with frontend
+            technologies and databases as well.
+        </p>
+        <p>
+            In <b>2006</b> I joined HFHS. I’ve written CRMs and patient-management systems for
+            <a href="http://www.henryford.com">Henry Ford Health System.</a><br><br>
+
+            Then I joined Quicken Loans in <b>2012</b>. As an engineering lead I helped them
+            launch the future of mortgage servicing with <a href="https://myql.com">MyQL Servicing.</a>
+            Since then I’ve
+            focused on building the foundation for PHP applications within QL. This includes
+            deployment systems, CI, unit testing, enterprise system architecture and beyond.<br><br>
+
+            <a href="http://elixir-lang.org">Elixir</a> is pretty cool, I’ve spent a lot of time exploring and learning about its ecosystem.
+        </p>
+
+        <hr>
+
+        <div class="split style1">
+            <section>
+                <h3>{{ site.job.title }} ({{ site.job.company}})</h3>
+                <ul class="alt">
+                    {% for responsibility in site.job.responsibilities %}
+                        <li>{{ responsibility }}</li>
+                    {% endfor %}
+                </ul>
+            </section>
+
+            <section>
+                <ul class="contact">
+                    <li>
+                        <h3>Location</h3>
+                        <span>
+                            {{ site.location.city }}<br />
+                            {{ site.location.country }}
+                        </span>
+                    </li>
+                    <li>
+                        <h3>Email</h3>
+                        {{ site.email }}
+                    </li>
+                    <li>
+                        <h3>GitHub</h3>
+                        <ul class="icons">
+                            <li><a href="{{ site.github_url }}" class="fa-github"> github.com/skluck</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </div>
+</section>
+
+</div>

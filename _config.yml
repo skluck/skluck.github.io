@@ -13,7 +13,12 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://kluck.engineering"
 
 # Social settings
+whoami: "Steve Kluck"
 github_url: "https://github.com/skluck"
+
+location:
+    city: "Detroit, Michigan"
+    country: "USA"
 
 job:
     title: "Principal Software Engineer"
