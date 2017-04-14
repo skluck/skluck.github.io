@@ -7,29 +7,11 @@
 
 # Site settings
 title: "Kluck Engineering"
-email: "steve at kluck.engineering"
 description: ""
 url: "http://kluck.engineering"
 baseurl: "" # the subpath of your site, e.g. /blog
 
-# Social settings
 whoami: "Steve Kluck"
-github_url: "https://github.com/skluck"
-
-location:
-    city: "Detroit, Michigan"
-    country: "USA"
-
-job:
-    title: "Principal Software Engineer"
-    company: "Quicken Loans"
-    responsibilities:
-      - "Lead developer on engineering team within QL Enterprise Services."
-      - "Design, implement, and maintain PHP applications."
-      - "Maintain core shared PHP libraries for use throughout company."
-      - "Develop release pipeline platform."
-      - "Mentor other engineers, define best practices."
-
 
 # Build settings
 markdown: "kramdown"
