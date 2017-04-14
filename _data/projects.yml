@@ -30,7 +30,7 @@
             <a href="https://vuejs.org/">Vue JS 2.2</a>, <a href="http://semantic-ui.com/">Semantic UI 2.2</a>
         </sub>
 
-    icon: "fa-clock-o"
+    icon: "fa-tachometer"
     try: "http://kluck.engineering/github-dashboard"
     source: "https://github.com/skluck/github-dashboard"
 -
@@ -41,7 +41,7 @@
         Single-file html/js clock screensaver with no external dependencies to provide a
         prettier alternative to the built-in clock screensavers.
 
-    icon: "fa-tachometer"
+    icon: "fa-clock-o"
     try: "http://kluck.engineering/screensaver-clock"
     source: "https://github.com/skluck/screensaver-clock"
 -
