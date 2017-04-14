@@ -16,18 +16,6 @@
                     <h2>{{ project.name }}</h2>
                     <p>{{ project.description }}</p>
 
-                    <div class="table-wrapper">
-                        <table>
-                            <tbody>
-                                {% for repo in project.repos %}
-                                    <tr>
-                                        <td>{{ repo.name }}</td>
-                                        <td><a class="icon fa-github" href="https://github.com/{{ repo.repo }}">{{ repo.repo }}</a></td>
-                                    </tr>
-                                {% endfor %}
-                            </tbody>
-                        </table>
-                    </div>
                 </div>
             </div>
         <section>
