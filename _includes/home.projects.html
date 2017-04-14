@@ -13,11 +13,28 @@
             <section>
                 <span class="icon major {{ project.icon }}"></span>
                 <h3>{{ project.name }}</h3>
-                <p>{{ project.description }}</p>
+                <p>
+                    {{ project.description }}
+
+                    {% if project.tech %}
+                    <br><sub>
+                        {% for tech in project.techs %}
+                            {% if tech.name %}
+                                <a href="{{ tech.url }}">{{ tech.name }}</a>
+                            {% else %}
+                                {{ tech.name }}
+                            {% endif %}
+                        {% endfor %}
+                    </sub>
+                    {% endif %}
+
+                </p>
 
                 <ul class="actions">
                     <li><a href="{{ project.try }}" class="button special small ">Try it</a></li>
-                    <li><a href="{{ project.source }}" class="button small icon fa-github">Source Code</a></li>
+                    {% if project.source %}
+                        <li><a href="{{ project.source }}" class="button small icon fa-github">Source Code</a></li>
+                    {% endif %}
                 </ul>
             </section>
         {% endfor %}
