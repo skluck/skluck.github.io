@@ -13,5 +13,5 @@ job:
       - "Design, implement, and maintain PHP applications."
       - "Maintain core shared PHP libraries for use throughout company."
       - "Develop release pipeline platform and CICD practices."
-      - "Enable infrastructure As Code and guide cloud practices."
+      - "Enable infrastructure As Code and guide cloud migrations."
       - "Mentor other engineers, develop SDE career path and culture."
