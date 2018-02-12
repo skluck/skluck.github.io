@@ -12,5 +12,6 @@ job:
       - "Lead developer on engineering team within QL Enterprise Services."
       - "Design, implement, and maintain PHP applications."
       - "Maintain core shared PHP libraries for use throughout company."
-      - "Develop release pipeline platform."
-      - "Mentor other engineers, define best practices."
+      - "Develop release pipeline platform and CICD practices."
+      - "Enable infrastructure As Code and guide cloud practices."
+      - "Mentor other engineers, develop SDE career path and culture."
