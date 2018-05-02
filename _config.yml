@@ -8,7 +8,7 @@
 # Site settings
 title: "Kluck Engineering"
 description: ""
-url: "http://kluck.engineering"
+url: "https://kluck.engineering"
 baseurl: "" # the subpath of your site, e.g. /blog
 
 whoami: "Steve Kluck"
