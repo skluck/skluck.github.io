@@ -10,7 +10,7 @@
 
     {% for project in site.data.oss %}
         <section>
-            <a href="#" class="image"><img src="images/{{ project.image | default: 'pic01.jpg' }} pic01.jpg" alt="" data-position="center center"></a>
+            <a href="#" class="image"><img src="images/{{ project.image | default: 'pic01.jpg' }}" alt="" data-position="center center"></a>
             <div class="content">
                 <div class="inner">
                     <h2>{{ project.name }}</h2>
