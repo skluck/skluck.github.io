@@ -1,5 +1,6 @@
 -
     name: "MCP"
+    image: 'mcp.jpg'
     description: |
         PHP package ecosystem developed at Quicken Loans. This mostly consists of
         high-quality libraries that solve a common need of developers and their web applications.
@@ -19,6 +20,7 @@
             repo: "quickenloans-mcp/mcp-logger"
 -
     name: "Hal Deployment Platform"
+    image: 'hal.jpg'
     description: |
         Hal is a deployment and release platform. It is written in PHP and supports a
         fast and simple way to deploy any type of application to any type of environment
