@@ -9,7 +9,7 @@ job:
     title: "Principal Software Engineer"
     company: "Quicken Loans"
     responsibilities:
-      - "Lead developer and architect on Builder Tools team within QL Enterprise Services."
+      - "Lead developer and architect on Build/Deployment Tooling team within QL Technology (2000+ team members)."
       - "Design, implement, and maintain PHP applications and enterprise-wide PHP libraries."
       - "Develop release pipeline platform and CI/CD practices across Quicken Loans."
       - "Enable infrastructure As Code and guide cloud migrations with Terraform and CloudFormation adoption."
