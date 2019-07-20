@@ -8,16 +8,16 @@
     repos:
         -
             name: "Panthor (Web Microframework)"
-            repo: "quickenloans-mcp/mcp-panthor"
+            repo: "quickenloans/mcp-panthor"
         -
             name: "Common (Datetime, GUID utils)"
-            repo: "quickenloans-mcp/mcp-common"
+            repo: "quickenloans/mcp-common"
         -
             name: "Cache (Caching standard)"
-            repo: "quickenloans-mcp/mcp-cache"
+            repo: "quickenloans/mcp-cache"
         -
             name: "Logger (PSR-3 Logger)"
-            repo: "quickenloans-mcp/mcp-logger"
+            repo: "quickenloans/mcp-logger"
 -
     name: "Hal Deployment Platform"
     image: 'hal.jpg'
