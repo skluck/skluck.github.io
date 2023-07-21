@@ -1,0 +1,231 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Typography */
+body {
+  font-family: "Roboto Condensed", "Arial Narrow", "Helvetica Neue", sans-serif;
+  font-size: 20px;
+  line-height: 150%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Neucha", "Noteworthy", "Times New Roman", sans-serif;
+  line-height: 150%;
+}
+
+pre, code {
+  font-family: "Source Code Pro", "Menlo", "Courier", monospace;
+  color: #4f4f4f;
+}
+
+h1.title {
+  font-size: 42px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+h1 {
+  font-size: 38px;
+}
+
+h2 {
+  font-size: 28px;
+  color: #4f4f4f;
+}
+
+h3 {
+  font-size: 24px;
+  color: #828282;
+}
+
+a {
+  color: #ff6d6d;
+  text-decoration: none;
+}
+
+a:hover {
+  border-bottom: 1px solid #ff6d6d;
+}
+
+p > code {
+  font-size: 95%;
+}
+
+blockquote {
+  font-style:italic;
+  padding: 0 3em 0 2em;
+}
+
+h1 > code, h2 > code, h3 > code, h4 > code, h5 > code, h6 > code, a > code {
+  color: inherit;
+}
+
+/* Spacing */
+* {
+  box-sizing: border-box;
+}
+
+#main {
+  max-width: 750px;
+  width: 100%;
+  margin: 0 auto 30px auto;
+  padding: 0 10px 0 10px;
+}
+
+p {
+  margin-bottom: 30px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  /* Override the spacing rule above: only move content below headers down by
+   * 10px */
+  margin-bottom: 10px;
+}
+
+p + h1 {
+  /* Space out sections of an article more than regular spacing */
+  margin-top: 45px;
+}
+
+ol, ul {
+  padding: 0;
+}
+
+li + li {
+  margin-top: 15px;
+}
+
+hr {
+  border: 0;
+  border-bottom: 1px solid #828282;
+  width: 80%;
+}
+
+#main {
+  max-width: 800px;
+}
+
+section {
+    margin-top: 4em;
+}
+
+/* author header */
+.author {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin: 30px auto 30px auto;
+  transform: none;
+  width: 350px;
+  flex-direction: row;
+}
+
+.author a, .author a:hover {
+  color: inherit;
+  border-bottom: none;
+}
+
+a.author-logo img {
+  display: block;
+  width: 130px;
+  height: 130px;
+}
+
+a.author-logo #eyebrows {
+  transition: transform 0.15s ease-in-out;
+}
+
+a.author-logo:hover #eyebrows {
+  transform: translateY(-3px);
+}
+
+.author-social {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+}
+
+.author-social svg {
+  width: 20px;
+  height: 20px;#
+  display: block;
+}
+
+.author-social svg:hover {
+  fill: #ff6d6d;
+}
+
+.author-social a + a {
+  margin-left: 10px;
+}
+
+.author-name {
+/*  font-size: 20px;*/
+/*  line-height: 125%;*/
+}
+
+.author-meta .description {
+  font-size: 20px;
+  line-height: 125%;
+  color: #828282;
+  font-weight: normal;
+}
+
+.author aside {
+  display: flex;
+  flex-direction: column;
+  font-size: 30px;
+  font-weight: bold;
+  height: 130px;
+  justify-content: center;
+  line-height: 125%;
+  margin-left: 20px;
+}
+
+/* projects block */
+.projects li {
+  list-style: none;
+}
+
+.projects .description {
+  display: block;
+  font-size: 16px;
+  color: #828282;
+  line-height: 125%;
+}
+
